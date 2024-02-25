@@ -1,10 +1,7 @@
-import { Typography } from '@mui/material';
 import { FC } from 'react';
 
+import styles from './styles.module.scss';
+
 export const PageTitle: FC<{ title: string }> = ({ title }) => {
-  return (
-    <Typography variant='h1' fontSize={36}>
-      {title}
-    </Typography>
-  );
+  return <h1 className={styles.pageTitle}>{title}</h1>;
 };

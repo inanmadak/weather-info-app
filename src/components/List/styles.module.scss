@@ -1,0 +1,32 @@
+.list {
+  padding: 0.5rem;
+  margin: 0;
+
+  ul {
+    list-style: none;
+    padding-inline-start: 0.5rem;
+    overflow-y: auto;
+  }
+
+  .listItem {
+    padding: 0.25rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #d9d9d9;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+
+    &:hover {
+      background-color: #e6e6e6;
+    }
+
+    span {
+      display: block;
+      padding: 0.5rem;
+
+      &.remove {
+        border-left: 1px solid #d9d9d9;
+      }
+    }
+  }
+}

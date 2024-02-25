@@ -1,3 +1,18 @@
+# Weather App
+
+This application shows weather information of a city provided by the user. It is bootstrapped via Create React App. Before running, please add the following environment variables to an `.env` file.
+
+It is necessary to have an API key from https://www.weatherapi.com/
+
+```
+REACT_APP_API_URL=http://api.weatherapi.com/v1/forecast.json
+REACT_APP_API_KEY=<your api key>
+```
+
+I could have done more things, but time is limited. City image is not displayed, because I needed to query another api or Google (which I did not focus on)
+
+See below commands for running the app.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

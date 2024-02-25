@@ -1,0 +1,25 @@
+.infoField {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.5rem;
+
+  &.vertical {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  label {
+    display: block;
+    gap: 1rem;
+    color: #646464;
+    flex: 1;
+    max-width: 180px;
+  }
+
+  span {
+    display: block;
+    flex: 2;
+  }
+}
