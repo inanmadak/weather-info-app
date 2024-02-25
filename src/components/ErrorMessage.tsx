@@ -3,9 +3,5 @@ interface ErrorMessageProps {
 }
 
 export const ErrorMessage = ({ message }: ErrorMessageProps) => {
-  return (
-    <div>
-      <div>{message}</div>
-    </div>
-  );
+  return <div>{message}</div>;
 };
