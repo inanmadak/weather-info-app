@@ -1,3 +1,4 @@
+import { ErrorInfo, WeatherInfo } from 'common/types';
 import { API_KEY, API_URL } from 'config/api';
 import { useQuery } from 'react-query';
 import { makeUrl } from 'utils/misc';
@@ -7,9 +8,11 @@ type WeatherApiParams = {
   q: string;
 };
 
+type WeatherApiResponse = WeatherInfo & { error: ErrorInfo };
+
 const getWeatherInfo = async (params: WeatherApiParams) => {
   try {
-    const url = makeUrl(`${API_URL}`, { ...params, key: API_KEY });
+    const url = makeUrl(`${API_URL}`, { ...params, q: params.q || 'London', key: API_KEY });
 
     const response = await fetch(url);
     return response.json();
@@ -19,5 +22,8 @@ const getWeatherInfo = async (params: WeatherApiParams) => {
 };
 
 export const useWeatherApi = (params: WeatherApiParams) => {
-  return useQuery(['location', params], () => getWeatherInfo(params), { notifyOnChangeProps: ['data'], staleTime: 10 });
+  return useQuery<WeatherApiResponse>(['location', params], () => getWeatherInfo(params), {
+    notifyOnChangeProps: ['data'],
+    staleTime: 10,
+  });
 };

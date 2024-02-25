@@ -1,5 +1,4 @@
 import { QueryClientProvider } from 'react-query';
-import './App.css';
 import { queryClient } from 'config/api';
 import { Weather } from 'pages/Weather';
 

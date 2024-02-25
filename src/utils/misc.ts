@@ -11,5 +11,5 @@ export const makeUrl = (url: string, params: Record<string, string | number | bo
 };
 
 export const convertDate = (date: string) => {
-  return new Date().toLocaleDateString('en-us', { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' });
+  return new Date(date).toLocaleDateString('en-us', { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' });
 };

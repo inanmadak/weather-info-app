@@ -1,4 +1,4 @@
-import { ForecastDay, WeatherInfo } from 'common/types';
+import { ForecastDay } from 'common/types';
 import { convertDate } from 'utils/misc';
 
 import styles from './styles.module.scss';
@@ -21,17 +21,19 @@ export const DailyForecast = ({
         <InfoField label='Condition' value={condition.text} vertical />
         <img src={`http:${condition.icon}`} alt={condition.text} />
       </div>
-      <div className={styles.infoWrapper}>
-        <InfoField label='Avg. Temperature' value={`${avgtemp_c} °C`} vertical />
-      </div>
-      <div className={styles.infoWrapper}>
-        <InfoField label='Max' value={`${maxtemp_c} °C`} vertical />
-      </div>
-      <div className={styles.infoWrapper}>
-        <InfoField label='Min' value={`${mintemp_c} °C`} vertical />
-      </div>
-      <div className={styles.infoWrapper}>
-        <InfoField label='Wind' value={`${maxwind_kph} km/h`} vertical />
+      <div className={styles.values}>
+        <div className={styles.infoWrapper}>
+          <InfoField label='Temperature' value={`${avgtemp_c} °C`} vertical />
+        </div>
+        <div className={styles.infoWrapper}>
+          <InfoField label='Max' value={`${maxtemp_c} °C`} vertical />
+        </div>
+        <div className={styles.infoWrapper}>
+          <InfoField label='Min' value={`${mintemp_c} °C`} vertical />
+        </div>
+        <div className={styles.infoWrapper}>
+          <InfoField label='Wind' value={`${maxwind_kph} km/h`} vertical />
+        </div>
       </div>
     </div>
   );

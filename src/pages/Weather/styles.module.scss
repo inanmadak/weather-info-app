@@ -1,4 +1,49 @@
 .weatherContainer {
-  width: 80%;
   max-width: 1200px;
+
+  .content {
+    display: flex;
+    gap: 1rem;
+
+    .weatherInfo {
+      flex: 3;
+    }
+
+    .favorites {
+      flex: 1;
+      background-color: #f5f5f5;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      height: 906px;
+      overflow-y: auto;
+    }
+  }
+
+  .search {
+    margin: 1rem 0rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    small {
+      color: #646464;
+    }
+
+    button {
+      padding: 0.5rem;
+      height: 36px;
+      background-color: #6ea1ff;
+      box-shadow: 0 0 10px rgba(134, 129, 129, 0.1);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .weatherContainer {
+    .content {
+      flex-direction: column;
+    }
+  }
 }

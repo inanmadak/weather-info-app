@@ -58,3 +58,8 @@ export interface WeatherInfo {
   current: CurrentWeatherInfo;
   forecast: Forecast;
 }
+
+export interface ErrorInfo {
+  code: number;
+  message: string;
+}

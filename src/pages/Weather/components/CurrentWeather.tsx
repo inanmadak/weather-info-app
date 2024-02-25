@@ -22,7 +22,12 @@ export const CurrentWeather: FC<CurrentWeatherProps> = ({ city, weather: { last_
       </div>
       <div className={styles.infoWrapper}>
         <InfoField label='Condition' value={condition.text} />
-        <img src={`http:${condition.icon}`} alt={condition.text} />
+        <div className={styles.condition}>
+          <div></div>
+          <div className={styles.conditionIcon}>
+            <img src={`http:${condition.icon}`} alt={condition.text} />
+          </div>
+        </div>
       </div>
       <div className={styles.infoWrapper}>
         <InfoField label='Wind' value={`${wind_degree}° ${wind_kph} km/h`} />
