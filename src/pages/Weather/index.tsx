@@ -69,7 +69,7 @@ export const Weather = () => {
             {isLoading ? (
               <Loading />
             ) : isError ? (
-              <ErrorMessage message='Something went wrong whle getting the data' />
+              <ErrorMessage message='Something went wrong while getting the data' />
             ) : data?.error?.message ? (
               <ErrorMessage message={data.error.message} />
             ) : data ? (
@@ -85,7 +85,7 @@ export const Weather = () => {
           </div>
         </div>
         <div className={styles.favorites}>
-          <List title='Favorites'>
+          <List title='Favorites' emptyMessage={favorites.size === 0 ? 'No favorites added.' : ''}>
             {Array.from(favorites.values()).map((city) => (
               <ListItem key={city} id={city} onClick={onSelectFavorite} onRemove={onRemoveFromFavorites}>
                 {city}
